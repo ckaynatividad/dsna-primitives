@@ -27,3 +27,40 @@ function at(arr, index) {
   return index > -1 ? arr[index] : arr[arr.length + index];
 }
 console.log(at(["a", "b", "c", "d", "e"], 1));
+
+function fizzBuzz(num) {
+  const results = [];
+  for (let i = 1; i <= num; i++) {
+    results.push(i);
+  }
+  const final = results.map((item, i) => {
+    if (item % 3 === 0 && item % 5 === 0) {
+      return (item = "FizzBuzz");
+    } else if (item % 5 === 0) {
+      return (item = "Buzz");
+    } else if (item % 3 === 0) {
+      return (item = "Fizz");
+    }
+    return item;
+  });
+
+  return final;
+}
+
+console.log(fizzBuzz(16));
+
+function anagrams(wordOne, wordTwo) {
+  if (wordOne.length != wordTwo.length) {
+    return false;
+  }
+  const wordOneEdited = wordOne.split("").sort().join("");
+  const wordTwoEdited = wordTwo.split("").sort().join("");
+
+  if (wordOneEdited === wordTwoEdited) {
+    return true;
+  }
+  return false;
+}
+console.log(anagrams("superintended", "unpredestined"));
+console.log(anagrams("pictorialness", "documentarily"));
+console.log(anagrams("noodles", "meow"));
