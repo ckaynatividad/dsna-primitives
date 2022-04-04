@@ -14,3 +14,16 @@ function titleCase(str) {
   return meow;
 }
 console.log(titleCase("kujibiki unbalance"));
+
+function oddOrEven(number) {
+  const split = number.toString().split("");
+  const toNumber = split.map(Number);
+  const sum = toNumber.reduce((a, b) => a + b);
+  return sum % 2 === 0 ? "even" : "odd";
+}
+console.log(oddorEven(121));
+
+function at(arr, index) {
+  return index > -1 ? arr[index] : arr[arr.length + index];
+}
+console.log(at(["a", "b", "c", "d", "e"], 1));
